@@ -20,6 +20,8 @@ private:
     bool isYieldSign(const std::vector<cv::Point>& contour);
     bool isSpeedLimitSign(const cv::Rect& rect);
     bool isRed(const cv::Mat& mask, const cv::Rect& rect);
+    bool isWrongWaySign(const cv::Mat& frame, const cv::Rect& rect, const cv::Mat& hsv);
+    bool isOneWaySign(const cv::Mat& frame, const cv::Rect& rect);
 };
 
 #endif

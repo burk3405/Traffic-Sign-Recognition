@@ -9,7 +9,11 @@ vector<SignDetector::DetectedSign> SignDetector::detect(const Mat& inputFrame) {
     Mat frame, hsv, maskRed1, maskRed2, maskRed, maskGray;
 
     // 1️- Image Resizing
-    resize(inputFrame, frame, Size(640, 480));
+    // REMOVE or COMMENT OUT the following line:
+    // resize(inputFrame, frame, Size(640, 480));
+
+    // INSTEAD, just use the inputFrame directly:
+    frame = inputFrame.clone();
 
     // 2️- Convert to HSV
     cvtColor(frame, hsv, COLOR_BGR2HSV);
